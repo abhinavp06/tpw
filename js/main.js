@@ -1,4 +1,4 @@
-// Simple JavaScript for TPW Blog
+// Simple JavaScript for The Philosopher's Window Blog
 // Minimal functionality to enhance user experience
 
 document.addEventListener('DOMContentLoaded', function() {

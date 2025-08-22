@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TPW - Blogs</title>
+    <title>The Philosopher's Window - Blogs</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav class="navigation">
       <div class="nav-container">
-        <a href="index.html" class="nav-logo">TPW</a>
+        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="album.html" class="nav-link">Albums</a></li>
@@ -23,83 +23,40 @@
         <p>sometimes, i just like to write.</p>
       </header>
 
-      <section class="blog-posts">
-        <article class="blog-post">
-          <header class="post-header">
-            <h2>The Art of Minimal Design</h2>
-            <time datetime="2025-08-22">August 22, 2025</time>
-          </header>
-          <div class="post-content">
-            <p>
-              In a world filled with digital noise and visual clutter, there's
-              something profoundly refreshing about embracing simplicity.
-              Minimal design isn't just about aesthetics—it's a philosophy that
-              prioritizes function, clarity, and intentionality.
-            </p>
-            <p>
-              When we strip away the unnecessary, we're left with what truly
-              matters. Every element serves a purpose, every space has meaning,
-              and every choice is deliberate.
-            </p>
-            <p>
-              This blog itself is an experiment in minimalism. No flashy
-              animations, no overwhelming colors, just clean typography and
-              thoughtful spacing. The goal is to let the content breathe and the
-              words speak for themselves.
-            </p>
-          </div>
-        </article>
+      <!-- Sort Controls -->
+      <div class="albums-controls">
+        <button id="sort-button" class="sort-button" data-direction="desc">
+          sort: newest first ↓
+        </button>
+      </div>
 
-        <article class="blog-post">
-          <header class="post-header">
-            <h2>Photography as Meditation</h2>
-            <time datetime="2025-08-20">August 20, 2025</time>
-          </header>
-          <div class="post-content">
-            <p>
-              There's a meditative quality to photography that often goes
-              unnoticed. It's not just about capturing moments—it's about being
-              present in them.
-            </p>
-            <p>
-              When you hold a camera, you're forced to slow down, to observe, to
-              really see what's in front of you. The mundane becomes
-              extraordinary when viewed through the right lens.
-            </p>
-            <p>
-              Every photo in the album section represents a moment of
-              mindfulness, a pause in the rushing world to appreciate something
-              beautiful or meaningful.
-            </p>
-          </div>
-        </article>
+      <!-- Blogs Timeline Container -->
+      <div class="blogs-timeline" id="blogs-timeline">
+        <!-- Dynamic blog posts will be loaded here -->
+      </div>
 
-        <article class="blog-post">
-          <header class="post-header">
-            <h2>Why I Started TPW</h2>
-            <time datetime="2025-08-18">August 18, 2025</time>
-          </header>
-          <div class="post-content">
-            <p>
-              TPW stands for "Thoughts, Photography, Words"—three elements that
-              form the core of human expression and connection.
-            </p>
-            <p>
-              I wanted a space that was unapologetically simple, where the focus
-              could remain on the content rather than the container. No complex
-              frameworks, no tracking scripts, just HTML, CSS, and the
-              occasional bit of JavaScript.
-            </p>
-            <p>
-              In an age of social media algorithms and endless scrolling,
-              sometimes we need a place that simply exists, without trying to
-              capture attention or engagement metrics.
-            </p>
-          </div>
-        </article>
-      </section>
+      <!-- Loading Indicator -->
+      <div
+        class="loading-indicator"
+        id="loading-indicator"
+        style="display: none"
+      >
+        <div class="loading-spinner"></div>
+        <p>loading more thoughts...</p>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="no-results" style="display: none">
+        <p>no blogs found matching your search.</p>
+        <button
+          onclick="document.getElementById('search-input').value = ''; document.getElementById('search-input').dispatchEvent(new Event('input'));"
+        >
+          clear search
+        </button>
+      </div>
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/blogs.js"></script>
   </body>
 </html>

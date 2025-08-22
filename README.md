@@ -1,11 +1,11 @@
-# TPW - A Minimal Blog Website
+# The Philosopher's Window - A Minimal Blog Website
 
-TPW (Thoughts, Photography, Words) is a clean, minimal blog website built with pure HTML, CSS, and JavaScript.
+The Philosopher's Window (Thoughts, Photography, Words) is a clean, minimal blog website built with pure HTML, CSS, and JavaScript.
 
 ## Structure
 
 ```
-tpw/
+The Philosopher's Window/
 ├── index.html          # Home page
 ├── album.html          # Photo album section
 ├── blogs.html          # Blog posts section
@@ -53,7 +53,7 @@ This website uses modern CSS features but maintains broad browser compatibility:
 
 ## Philosophy
 
-TPW embraces the philosophy of minimal web design:
+The Philosopher's Window embraces the philosophy of minimal web design:
 
 - No complex frameworks or build processes
 - Fast loading with minimal dependencies
