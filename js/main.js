@@ -70,3 +70,46 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Simple markdown to HTML converter
+function convertMarkdownToHtml(markdown) {
+    let html = markdown;
+    
+    // Convert headers
+    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    
+    // Convert bold text (but preserve existing HTML tags)
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    
+    // Convert code blocks
+    html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+    html = html.replace(/`(.*?)`/g, '<code>$1</code>');
+    
+    // Convert links
+    html = html.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
+    
+    // Convert line breaks to paragraphs (but preserve existing HTML)
+    html = html.split('\n\n').map(paragraph => {
+        paragraph = paragraph.trim();
+        if (paragraph === '') return '';
+        if (paragraph.startsWith('<') || paragraph.includes('<h') || paragraph.includes('<pre') || paragraph.includes('<ul') || paragraph.includes('<ol')) {
+            return paragraph;
+        }
+        return '<p>' + paragraph.replace(/\n/g, '<br>') + '</p>';
+    }).join('\n');
+    
+    // Convert unordered lists
+    html = html.replace(/^\- (.*)$/gm, '<li>$1</li>');
+    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    
+    // Convert ordered lists
+    html = html.replace(/^\d+\. (.*)$/gm, '<li>$1</li>');
+    
+    // Convert blockquotes
+    html = html.replace(/^> (.*)$/gm, '<blockquote>$1</blockquote>');
+    
+    return html;
+}

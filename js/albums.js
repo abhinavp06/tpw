@@ -155,9 +155,8 @@ class AlbumLoader {
     
     // Add click event to navigate to album review
     albumCard.addEventListener('click', () => {
-      // For now, we'll just log - you can implement navigation later
-      console.log(`Navigate to album: ${albumPath}`);
-      // window.location.href = `album-review.html?album=${albumPath}`;
+      // Navigate to the dynamic album review page
+      window.location.href = `album-review.html?album=${encodeURIComponent(albumPath)}`;
     });
 
     const coverExists = await this.checkIfCoverExists(albumPath);
