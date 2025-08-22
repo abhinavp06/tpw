@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Philosopher's Window - Albums</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="album.html" class="nav-link active">Albums</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="albums-controls">
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by sequence number..."
+            class="search-input"
+          />
+          <button id="clear-search" class="clear-button" style="display: none">
+            Clear
+          </button>
+        </div>
+        <div class="sort-container">
+          <button id="sort-button" class="sort-button" data-direction="asc">
+            Sort: Ascending
+          </button>
+        </div>
+      </div>
+
+      <section class="albums-timeline" id="albums-timeline">
+        <!-- Albums will be dynamically loaded here -->
+      </section>
+
+      <div
+        class="loading-indicator"
+        id="loading-indicator"
+        style="display: none"
+      >
+        <p>Loading more albums...</p>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/albums.js"></script>
+  </body>
+</html>

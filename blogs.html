@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Philosopher's Window - Blogs</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="album.html" class="nav-link">Albums</a></li>
+          <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="page-header">
+        <p>sometimes, i just like to write.</p>
+      </header>
+
+      <!-- Sort Controls -->
+      <div class="albums-controls">
+        <button id="sort-button" class="sort-button" data-direction="desc">
+          sort: newest first ↓
+        </button>
+      </div>
+
+      <!-- Blogs Timeline Container -->
+      <div class="blogs-timeline" id="blogs-timeline">
+        <!-- Dynamic blog posts will be loaded here -->
+      </div>
+
+      <!-- Loading Indicator -->
+      <div
+        class="loading-indicator"
+        id="loading-indicator"
+        style="display: none"
+      >
+        <div class="loading-spinner"></div>
+        <p>loading more thoughts...</p>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="no-results" style="display: none">
+        <p>no blogs found matching your search.</p>
+        <button
+          onclick="document.getElementById('search-input').value = ''; document.getElementById('search-input').dispatchEvent(new Event('input'));"
+        >
+          clear search
+        </button>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/blogs.js"></script>
+  </body>
+</html>

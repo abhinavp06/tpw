@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Review - The Philosopher's Window</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="album.html" class="nav-link">Albums</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <article class="album-review">
+        <header class="album-header">
+          <a href="album.html" class="back-link">← back to albums</a>
+        </header>
+
+        <div class="album-content">
+          <!-- Album info will be loaded here -->
+          <div class="album-info-section" id="album-info">
+            <div class="loading">Loading album information...</div>
+          </div>
+
+          <!-- Album pre-review section -->
+          <div class="album-reviews-section" id="album-reviews">
+            <!-- Album pre-review will be loaded here -->
+          </div>
+
+          <!-- Tracklist will be loaded here -->
+          <div class="tracklist-section" id="tracklist">
+            <!-- Tracklist will be populated by JavaScript -->
+          </div>
+
+          <!-- Album main review section -->
+          <div class="album-main-review-section" id="album-main-review">
+            <!-- Album main review will be loaded here -->
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/album-review.js"></script>
+  </body>
+</html>
