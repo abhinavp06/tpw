@@ -1,0 +1,302 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* Navigation */
+.navigation {
+  padding: 2rem 0 1rem 0;
+}
+
+.nav-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: calc(100vh - 120px);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Page Header */
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.page-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Sections */
+.intro,
+.recent-posts {
+  margin-bottom: 2rem;
+}
+
+.intro h2,
+.recent-posts h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.intro p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Main Section for Home Page */
+.main-section {
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+/* Post Grid */
+.post-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-card {
+  padding: 0.5rem 0;
+}
+
+.post-card:hover {
+  background: none;
+}
+
+.post-card h3 {
+  margin-bottom: 0.25rem;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.post-card h3 a {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.post-card h3 a:hover {
+  color: #666;
+}
+
+.post-card p {
+  color: #666;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.post-card time {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Album Styles */
+.album-collection {
+  margin-bottom: 2rem;
+}
+
+.album-collection h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  color: #333;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.photo-placeholder {
+  aspect-ratio: 4/3;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.photo-placeholder:hover {
+  background-color: #f0f0f0;
+}
+
+/* Blog Posts */
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-post {
+  padding-bottom: 1rem;
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+}
+
+.post-header {
+  margin-bottom: 1rem;
+}
+
+.post-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  font-weight: normal;
+}
+
+.post-header time {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.post-content p {
+  margin-bottom: 0.75rem;
+  color: #444;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.post-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .main-content {
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .post-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
