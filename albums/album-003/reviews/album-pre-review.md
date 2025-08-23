@@ -21,6 +21,8 @@ With the first 2 blogs I was trying to find my footing in this unknown space. Wh
 <br/><br/>
 So, to summarize, we will think of this series like a stream of water - dipping in and out of the stream while some really beautiful music plays in the background.
 <br/><br/>
+I also plan on keeping this github repository public with all branches as it is so that I can revisit my changes later. It's nerdy but I know I will enjoy looking back at it several years from now. Here's the repository if you're interested: [tpw](https://github.com/abhinavp06/tpw)
+<br/><br/>
 With that said, I now want to introduce you to one of the greatest albums to ever exist - Ænema.
 <br/><br/>
 _There will never be another Ænema._
