@@ -130,7 +130,7 @@ class BlogLoader {
     
     blogCard.innerHTML = `
       <header class="post-header">
-        <h2><a href="blogs/${folder}/" class="blog-title-link">${blog.title}</a></h2>
+        <h2><a href="blog-article.html?folder=${folder}" class="blog-title-link">${blog.title}</a></h2>
         <time datetime="${blog.publishDate}">${formattedDate}</time>
       </header>
       
