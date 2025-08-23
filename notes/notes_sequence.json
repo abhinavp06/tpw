@@ -2,9 +2,9 @@
   "notes": [
     {
       "id": "note-001",
-      "title": "First Note",
+      "title": "note-001",
       "date": "2025-08-23",
-      "summary": "This is a sample note to get started.",
+      "summary": "What is the need for notes?",
       "path": "notes/note-001"
     }
   ]

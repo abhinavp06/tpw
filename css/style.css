@@ -1803,3 +1803,22 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Neon green markdown links styling */
+.markdown-link {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.markdown-link:hover {
+  color: #00ffaa !important;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.8);
+  transform: scale(1.02);
+}
+
+.markdown-link:visited {
+  color: #00dd00 !important;
+}
