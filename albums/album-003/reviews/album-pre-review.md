@@ -2,10 +2,10 @@
 <br/><br/>
 After finishing my Sabbath review, I have been trying to figure out what direction I want steer this blog in. I went through so many iterations which I'll explain below:
 <br/><br/>
-See in my opinion, the key to unlocking a "higher meaning" is to categorize thinking into 3 categories - God, Consciousness and The Self. 
-<br/><br/>
 <ol>
-<li> When I was initially designing this website, I thought of categorizing blogs into these 3 categories. Infact, I had prepared a mind map like this:
+<li>See in my opinion, the key to unlocking a "higher meaning" is to categorize thinking into 3 categories - God, Consciousness and The Self. 
+<br/><br/>
+When I was initially designing this website, I thought of categorizing blogs into these 3 categories. Infact, I had prepared a mind map like this:
 <br/><br/>
 ![Mind Map](albums/album-003/reviews/mind-map-pre-review.png)
 <br/><br/>
