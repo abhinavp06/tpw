@@ -1,9 +1,9 @@
 {
-  "title": "Test Blog",
-  "publishDate": "August 20, 2025",
+  "title": "blog-001",
+  "publishDate": "August 23, 2025",
   "author": "abhinavp06",
   "tags": ["test"],
   "readTime": "1 min read",
-  "excerpt": "Test blog",
+  "excerpt": "This is just a test. Bye. ",
   "globalSequence": "1"
 }
