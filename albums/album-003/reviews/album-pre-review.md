@@ -1,4 +1,4 @@
-<b>---23-08-2025 12:14 SATURDAY---</b>
+<b>--- 23-08-2025 12:14 SATURDAY ---</b>
 <br/><br/>
 After finishing my Sabbath review, I have been trying to figure out what direction I want steer this blog in. I went through so many iterations which I'll explain below:
 <br/><br/>

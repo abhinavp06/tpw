@@ -1,4 +1,4 @@
-<b>--- 21-07-2025 22:08 ---</b>
+<b>--- 21-07-2025 22:08 MONDAY ---</b>
 <br/>
 Overall, it's not perfect. The album feels like a mashup of "genius" and "please launch my band" kind of songs. On one hand you have songs which contain so much emotion and then all of a sudden you have the second half which is just so disconnected from the first.
 <br/><br/>
