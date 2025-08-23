@@ -6,7 +6,7 @@ In these next 30 days, I plan to review Tool's Ænema. I have asked Grok 4 to co
 <br/><br/>
 Here's the Grok chat if anyone is interested: [roadmap]() & [note-001]().
 <br/><br/>
-A coincidence - I use a random number generator (range between 1-the current number of albums I have) to listen to songs while researching about anything and it generated the number 23 which was Obscured by Clouds in my library and the time and date also are 23. Lol.
+A coincidence - I sometimes use a random number generator (range between 1-the current number of albums I have) to listen to albums while researching about anything and it generated the number 23 which was Obscured by Clouds in my library and the time and date also are 23. Lol.
 <br/><br/>
 Here is myy initial prompt:
 <br/>
@@ -24,4 +24,5 @@ Queries:
 <li>What is consciousness, the self, and how does it relate to god?</li>
 <li>Are there any other categories that should be included apart from the 3 mentioned previously?</li>
 <li>Is the only way to know you're conscious is by looking into your consciousness using your consciousness? Does this mean that there are multiple consciousnesses?</li>
+<li>Expand on this: [Chapter 4: Jñāna Karm Sanyās Yog](https://www.holy-bhagavad-gita.org/chapter/4/) - What if one is interested in the idea of bliss but also enjoys their current life in this world?</li>
 </ol>
