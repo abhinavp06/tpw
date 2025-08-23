@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Philosopher's Window - Albums</title>
+    <title>Notes - The Philosopher's Window</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -12,20 +12,25 @@
         <a href="index.html" class="nav-logo">The Philosopher's Window</a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="album.html" class="nav-link active">Albums</a></li>
+          <li><a href="albums.html" class="nav-link">Albums</a></li>
           <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-          <li><a href="notes.html" class="nav-link">Notes</a></li>
+          <li><a href="notes.html" class="nav-link active">Notes</a></li>
         </ul>
       </div>
     </nav>
 
     <main class="main-content">
+      <div class="page-header">
+        <h1>Notes</h1>
+        <p class="page-subtitle">Personal thoughts and observations</p>
+      </div>
+
       <div class="albums-controls">
         <div class="search-container">
           <input
             type="text"
             id="search-input"
-            placeholder="Search by sequence number..."
+            placeholder="Search notes by title..."
             class="search-input"
           />
           <button id="clear-search" class="clear-button" style="display: none">
@@ -33,26 +38,30 @@
           </button>
         </div>
         <div class="sort-container">
-          <button id="sort-button" class="sort-button" data-direction="asc">
-            Sort: Ascending
+          <button id="sort-button" class="sort-button" data-direction="desc">
+            sort: newest first ↓
           </button>
         </div>
       </div>
 
-      <section class="albums-timeline" id="albums-timeline">
-        <!-- Albums will be dynamically loaded here -->
-      </section>
+      <div class="notes-timeline" id="notes-timeline">
+        <!-- Notes will be dynamically loaded here -->
+      </div>
 
-      <div
-        class="loading-indicator"
-        id="loading-indicator"
-        style="display: none"
-      >
-        <p>Loading more albums...</p>
+      <div class="loading-indicator" id="loading-indicator">
+        <div class="loading-text">Loading notes...</div>
+      </div>
+
+      <div class="error-message" id="error-message" style="display: none">
+        Error loading notes. Please try again later.
       </div>
     </main>
 
+    <footer class="footer">
+      <p>&copy; 2025 The Philosopher's Window. All rights reserved.</p>
+    </footer>
+
     <script src="js/main.js"></script>
-    <script src="js/albums.js"></script>
+    <script src="js/notes.js"></script>
   </body>
 </html>
