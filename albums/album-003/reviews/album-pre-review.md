@@ -23,6 +23,6 @@ So, to summarize, we will think of this series like a stream of water - dipping 
 <br/><br/>
 I also plan on keeping this github repository public with all branches as it is so that I can revisit my changes later. It's nerdy but I know I will enjoy looking back at it several years from now. Here's the repository if you're interested: [tpw](https://github.com/abhinavp06/tpw)
 <br/><br/>
-With that said, I now want to introduce you to one of the greatest albums to ever exist - Ænema.
+With that said, I now want to introduce you to one of the greatest albums to ever exist - Ænima.
 <br/><br/>
-_There will never be another Ænema._
+_There will never be another Ænima._

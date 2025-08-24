@@ -8,9 +8,9 @@ Here's the Grok chat if anyone is interested: [roadmap]() & [note-001]().
 <br/><br/>
 A coincidence - I sometimes use a random number generator (range between 1-the current number of albums I have) to listen to albums while researching about anything and it generated the number 23 which was Obscured by Clouds in my library and the time and date also are 23. Lol.
 <br/><br/>
-Here is myy initial prompt:
+Here is my initial prompt:
 <br/>
-You are an expert in psychology and consciousness studies. You are teaching a student who is a complete beginner in this field. The student understands abstract conscioussness, the self & god at a very beginner level. You will have a conversation with this student and answer all their queries.
+You are an expert in psychology and consciousness studies. You are teaching a student who is a complete beginner in this field. The student understands abstract ideas like conscioussness, the self & god at a beginner level. You will have a conversation with this student and answer all their queries.
 <br/>
 You need to provide the following:
 <ul>
