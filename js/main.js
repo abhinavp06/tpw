@@ -95,8 +95,8 @@ function convertMarkdownToHtml(markdown) {
     // Convert images first (before links)
     html = html.replace(/!\[([^\]]*)\]\(([^)]*)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto; display: block; margin: 1rem 0;">');
     
-    // Convert links with neon green highlighting
-    html = html.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2" class="markdown-link">$1</a>');
+    // Convert links with neon green highlighting and open in new tab
+    html = html.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2" class="markdown-link" target="_blank" rel="noopener noreferrer">$1</a>');
     
     // Convert line breaks to paragraphs (but preserve existing HTML)
     html = html.split('\n\n').map(paragraph => {
