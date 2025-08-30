@@ -556,6 +556,37 @@ body {
   margin-bottom: 1rem;
 }
 
+.article-header-container {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #333333;
+}
+
+.article-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.article-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.article-meta time {
+  color: #cccccc;
+}
+
+.article-author {
+  color: #aaaaaa;
+  font-style: italic;
+}
+
 .back-link {
   color: #cccccc;
   text-decoration: none;
