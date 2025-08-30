@@ -112,11 +112,14 @@ class AlbumReviewLoader {
       let reviewsHtml = '<div class="album-reviews-container">';
       
       if (preReviewContent) {
+        // No lock for pre-review - show content directly
         reviewsHtml += `
           <div class="album-review-section">
             <h3 class="review-title">Album Pre-Review</h3>
-            <div class="review-content">
-              ${convertMarkdownToHtml(preReviewContent)}
+            <div class="review-content" data-review-type="pre-review">
+              <div class="review-text">
+                ${convertMarkdownToHtml(preReviewContent)}
+              </div>
             </div>
           </div>
         `;
@@ -151,11 +154,25 @@ class AlbumReviewLoader {
       let reviewsHtml = '<div class="album-reviews-container">';
       
       if (reviewContent) {
+        const isUnlocked = isReviewUnlocked(this.albumPath, 'main-review');
+        const lockedClass = isUnlocked ? '' : 'locked';
+        const overlayHtml = isUnlocked ? '' : `
+          <div class="review-lock-overlay">
+            <div class="lock-icon">🔒</div>
+            <div class="lock-text">Click to unlock and read the full album review</div>
+            <button class="unlock-button" onclick="unlockReview(this)">Unlock Review</button>
+          </div>
+        `;
+        const reviewTextStyle = isUnlocked ? '' : 'style="filter: blur(8px);"';
+        
         reviewsHtml += `
           <div class="album-review-section">
             <h3 class="review-title">Album Review</h3>
-            <div class="review-content">
-              ${convertMarkdownToHtml(reviewContent)}
+            <div class="review-content ${lockedClass}" data-review-type="main-review">
+              ${overlayHtml}
+              <div class="review-text" ${reviewTextStyle}>
+                ${convertMarkdownToHtml(reviewContent)}
+              </div>
             </div>
           </div>
         `;
@@ -220,7 +237,54 @@ class AlbumReviewLoader {
   }
 }
 
+// Global variables
+let albumReviewLoader = null;
+
 // Initialize the album review loader when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-  new AlbumReviewLoader();
+  albumReviewLoader = new AlbumReviewLoader();
 });
+
+// Global function to unlock review sections
+function unlockReview(buttonElement) {
+  const reviewContent = buttonElement.closest('.review-content');
+  const overlay = reviewContent.querySelector('.review-lock-overlay');
+  const reviewText = reviewContent.querySelector('.review-text');
+  const reviewType = reviewContent.getAttribute('data-review-type');
+  
+  // Store unlock state in localStorage
+  const albumPath = albumReviewLoader ? albumReviewLoader.albumPath : getAlbumPathFromURL();
+  const storageKey = `unlocked_${albumPath}_${reviewType}`;
+  localStorage.setItem(storageKey, 'true');
+  
+  // Add unlocking animation
+  reviewContent.classList.add('unlocking');
+  
+  // Add unlock animation
+  overlay.style.opacity = '0';
+  overlay.style.pointerEvents = 'none';
+  
+  // Remove blur from the review text
+  reviewText.style.filter = 'none';
+  reviewContent.classList.remove('locked');
+  
+  // Remove overlay completely after animation
+  setTimeout(() => {
+    if (overlay.parentNode) {
+      overlay.remove();
+    }
+    reviewContent.classList.remove('unlocking');
+  }, 300);
+}
+
+// Function to check if a review section should be unlocked
+function isReviewUnlocked(albumPath, reviewType) {
+  const storageKey = `unlocked_${albumPath}_${reviewType}`;
+  return localStorage.getItem(storageKey) === 'true';
+}
+
+// Helper function to get album path from URL
+function getAlbumPathFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('album') || 'albums/album-001';
+}
