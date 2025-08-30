@@ -57,9 +57,9 @@ class TYLILoader {
   applySorting() {
     this.filteredSequence.sort((a, b) => {
       if (this.sortDirection === 'desc') {
-        return b.sequence - a.sequence;
+        return a.sequence - b.sequence; // Lower sequence = newer
       } else {
-        return a.sequence - b.sequence;
+        return b.sequence - a.sequence; // Higher sequence = older
       }
     });
   }
@@ -70,80 +70,70 @@ class TYLILoader {
 
   async loadMoreTYLI() {
     if (this.loading || this.allTYLILoaded) return;
-
+    
     this.loading = true;
     this.showLoadingIndicator();
-
-    try {
-      const tyliToLoad = this.filteredSequence.slice(
-        this.currentIndex, 
-        this.currentIndex + this.tyliPerLoad
-      );
-
-      for (const tyliRef of tyliToLoad) {
-        await this.loadTYLIData(tyliRef);
+    
+    const endIndex = Math.min(this.currentIndex + this.tyliPerLoad, this.filteredSequence.length);
+    const tyliToLoad = this.filteredSequence.slice(this.currentIndex, endIndex);
+    
+    for (const tyli of tyliToLoad) {
+      try {
+        const tyliData = await this.loadTYLIData(tyli.folder);
+        this.renderTYLICard(tyliData, tyli.folder);
+      } catch (error) {
+        console.error(`Error loading TYLI: ${tyli.folder}`, error);
       }
-
-      this.currentIndex += tyliToLoad.length;
-      
-      if (this.currentIndex >= this.filteredSequence.length) {
-        this.allTYLILoaded = true;
-      }
-    } catch (error) {
-      console.error('Error loading TYLI:', error);
-    } finally {
-      this.loading = false;
-      this.hideLoadingIndicator();
     }
+    
+    this.currentIndex = endIndex;
+    
+    if (this.currentIndex >= this.filteredSequence.length) {
+      this.allTYLILoaded = true;
+    }
+    
+    this.loading = false;
+    this.hideLoadingIndicator();
   }
 
-  async loadTYLIData(tyliRef) {
-    try {
-      const tyliPath = `tyli/${tyliRef.folder}`;
-      const response = await fetch(`${tyliPath}/info.json`);
-      if (!response.ok) {
-        console.error(`Failed to load info for TYLI ${tyliPath}`);
-        return;
-      }
-      
-      const tyliInfo = await response.json();
-      await this.renderTYLICard(tyliInfo, tyliPath);
-    } catch (error) {
-      console.error(`Error loading TYLI ${tyliRef.folder}:`, error);
-    }
+  async loadTYLIData(folder) {
+    const infoResponse = await fetch(`tyli/${folder}/info.json`);
+    const info = await infoResponse.json();
+    return info;
   }
 
-  async renderTYLICard(tyliInfo, tyliPath) {
+  renderTYLICard(tyli, folder) {
     const timeline = document.getElementById('tyli-timeline');
     
-    const tyliCard = document.createElement('div');
-    tyliCard.className = 'blog-card';
-    tyliCard.style.cursor = 'pointer';
+    const tyliCard = document.createElement('article');
+    tyliCard.className = 'blog-post';
+    tyliCard.setAttribute('data-folder', folder);
     
-    // Add click event to navigate to TYLI article
-    tyliCard.addEventListener('click', () => {
-      window.location.href = `tyli-article.html?tyli=${encodeURIComponent(tyliPath)}`;
-    });
-
-    const formattedDate = new Date(tyliInfo.date).toLocaleDateString('en-US', {
+    // Format date
+    const publishDate = new Date(tyli.publishDate);
+    const formattedDate = publishDate.toLocaleDateString('en-US', {
       year: 'numeric',
-      month: 'long',
+      month: 'long', 
       day: 'numeric'
     });
-
+    
     tyliCard.innerHTML = `
-      <div class="blog-content">
-        <div class="blog-meta">
-          <span class="blog-date">${formattedDate}</span>
-          <span class="blog-author">by ${tyliInfo.author}</span>
-        </div>
-        <h2 class="blog-title">${tyliInfo.title}</h2>
-        <p class="blog-excerpt">${tyliInfo.summary}</p>
-        <div class="blog-arrow">→</div>
+      <header class="post-header">
+        <h2><a href="tyli-article.html?tyli=tyli/${folder}" class="blog-title-link">${tyli.title}</a></h2>
+        <time datetime="${tyli.publishDate}">${formattedDate}</time>
+      </header>
+      
+      <div class="post-content">
+        <p>${tyli.excerpt}</p>
       </div>
     `;
     
     timeline.appendChild(tyliCard);
+    
+    // Add fade-in animation
+    setTimeout(() => {
+      tyliCard.classList.add('visible');
+    }, 100);
   }
 
   setupInfiniteScroll() {

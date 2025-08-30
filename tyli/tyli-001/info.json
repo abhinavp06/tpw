@@ -1,6 +1,9 @@
 {
   "title": "Sample TYLI Entry",
-  "date": "2025-08-31",
-  "summary": "A sample TYLI entry to demonstrate the structure",
-  "author": "The Philosopher's Window"
+  "publishDate": "August 31, 2025",
+  "author": "The Philosopher's Window",
+  "tags": ["sample", "tyli"],
+  "readTime": "2 min read",
+  "excerpt": "A sample TYLI entry to demonstrate the structure",
+  "globalSequence": "1"
 }
