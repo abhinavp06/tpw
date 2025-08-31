@@ -7,56 +7,70 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navigation">
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="album.html" class="nav-link">Albums</a></li>
-          <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
-          <li><a href="notes.html" class="nav-link">Notes</a></li>
-          <li><a href="tyli.html" class="nav-link">TYLI</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="page-wrapper">
+      <nav class="main-nav">
+        <table>
+          <tr>
+            <td class="nav-logo">
+              <a href="index.html">The Philosopher's Window</a>
+            </td>
+            <td class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="album.html" class="nav-link">Albums</a>
+              <a href="blogs.html" class="nav-link active">Blogs</a>
+              <a href="notes.html" class="nav-link">Notes</a>
+              <a href="tyli.html" class="nav-link">TYLI</a>
+            </td>
+          </tr>
+        </table>
+      </nav>
 
-    <main class="main-content">
-      <header class="page-header">
-        <p>sometimes, i just like to write.</p>
-      </header>
+      <main class="main-content">
+        <header class="page-header">
+          <p>sometimes, i just like to write.</p>
+        </header>
 
-      <!-- Sort Controls -->
-      <div class="albums-controls">
-        <button id="sort-button" class="sort-button" data-direction="desc">
-          sort: newest first ↓
-        </button>
-      </div>
+        <!-- Sort Controls -->
+        <div class="blogs-controls">
+          <button id="sort-button" class="sort-button" data-direction="desc">
+            sort: newest first ↓
+          </button>
+        </div>
 
-      <!-- Blogs Timeline Container -->
-      <div class="blogs-timeline" id="blogs-timeline">
-        <!-- Dynamic blog posts will be loaded here -->
-      </div>
+        <!-- Blogs Timeline Container -->
+        <div class="blogs-timeline" id="blogs-timeline">
+          <!-- Dynamic blog posts will be loaded here -->
+        </div>
 
-      <!-- Loading Indicator -->
-      <div
-        class="loading-indicator"
-        id="loading-indicator"
-        style="display: none"
-      >
-        <div class="loading-spinner"></div>
-        <p>loading more thoughts...</p>
-      </div>
-
-      <!-- No Results Message -->
-      <div class="no-results" id="no-results" style="display: none">
-        <p>no blogs found matching your search.</p>
-        <button
-          onclick="document.getElementById('search-input').value = ''; document.getElementById('search-input').dispatchEvent(new Event('input'));"
+        <!-- Loading Indicator -->
+        <div
+          class="loading-indicator"
+          id="loading-indicator"
+          style="display: none"
         >
-          clear search
-        </button>
-      </div>
-    </main>
+          <p class="loading-text">loading more thoughts...</p>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="no-results" style="display: none">
+          <p>no blogs found matching your search.</p>
+          <button
+            onclick="document.getElementById('search-input').value = ''; document.getElementById('search-input').dispatchEvent(new Event('input'));"
+            class="clear-button"
+          >
+            clear search
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>
+        &copy; 2024 The Philosopher's Window |
+        <a href="mailto:contact@tpw.com">Contact</a> |
+        <a href="#top">Back to Top</a>
+      </p>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/blogs.js"></script>

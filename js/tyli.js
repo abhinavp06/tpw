@@ -130,10 +130,8 @@ class TYLILoader {
     
     timeline.appendChild(tyliCard);
     
-    // Add fade-in animation
-    setTimeout(() => {
-      tyliCard.classList.add('visible');
-    }, 100);
+    // Make immediately visible - no animation
+    tyliCard.classList.add('visible');
   }
 
   setupInfiniteScroll() {

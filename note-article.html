@@ -7,30 +7,44 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navigation">
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="album.html" class="nav-link">Albums</a></li>
-          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-          <li><a href="notes.html" class="nav-link active">Notes</a></li>
-          <li><a href="tyli.html" class="nav-link">TYLI</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="page-wrapper">
+      <nav class="main-nav">
+        <table>
+          <tr>
+            <td class="nav-logo">
+              <a href="index.html">The Philosopher's Window</a>
+            </td>
+            <td class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="album.html" class="nav-link">Albums</a>
+              <a href="blogs.html" class="nav-link">Blogs</a>
+              <a href="notes.html" class="nav-link active">Notes</a>
+              <a href="tyli.html" class="nav-link">TYLI</a>
+            </td>
+          </tr>
+        </table>
+      </nav>
 
-    <main class="main-content">
-      <article class="blog-article">
-        <header class="article-header">
-          <a href="notes.html" class="back-link">← back to notes</a>
-        </header>
+      <main class="main-content">
+        <article class="blog-article">
+          <header class="article-header">
+            <a href="notes.html" class="back-link">← back to notes</a>
+          </header>
 
-        <div class="article-content" id="note-content">
-          <!-- Note content will be loaded here -->
-        </div>
-      </article>
-    </main>
+          <div class="article-content" id="note-content">
+            <!-- Note content will be loaded here -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>
+        &copy; 2024 The Philosopher's Window |
+        <a href="mailto:contact@tpw.com">Contact</a> |
+        <a href="#top">Back to Top</a>
+      </p>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/note-article.js"></script>

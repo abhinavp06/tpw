@@ -175,10 +175,8 @@ class NotesLoader {
             const noteElement = this.createNoteElement(note);
             notesContainer.appendChild(noteElement);
             
-            // Add staggered animation delay
-            setTimeout(() => {
-                noteElement.classList.add('visible');
-            }, index * 100);
+            // Make immediately visible - no animation
+            noteElement.classList.add('visible');
         });
 
         timeline.appendChild(notesContainer);
@@ -262,10 +260,8 @@ class NotesLoader {
             const noteElement = this.createNoteElement(note);
             notesContainer.appendChild(noteElement);
             
-            // Add staggered animation delay
-            setTimeout(() => {
-                noteElement.classList.add('visible');
-            }, index * 100);
+            // Make immediately visible - no animation
+            noteElement.classList.add('visible');
         });
 
         timeline.appendChild(notesContainer);

@@ -141,10 +141,8 @@ class BlogLoader {
     
     timeline.appendChild(blogCard);
     
-    // Add fade-in animation
-    setTimeout(() => {
-      blogCard.classList.add('visible');
-    }, 100);
+    // Make immediately visible - no animation
+    blogCard.classList.add('visible');
   }
 
   setupInfiniteScroll() {

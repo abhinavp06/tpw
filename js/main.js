@@ -22,22 +22,35 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for fade-in animation
-    document.querySelectorAll('.blog-post, .post-card, .album-collection').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    // Completely disable animations - make all content immediately visible
+    document.querySelectorAll('.blog-post, .post-card, .album-collection, .blog-card, .note-card').forEach(el => {
+        // Force immediate visibility with no animations whatsoever
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.transition = 'none';
+        el.style.animation = 'none';
+        el.classList.add('visible');
     });
+
+    // Disable the intersection observer entirely
+    // const observer = new IntersectionObserver(function(entries) {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             // No animations - content stays static
+    //             entry.target.style.opacity = '1';
+    //             entry.target.style.transform = 'none';
+    //         }
+    //     });
+    // }, observerOptions);
+
+    // // Observe elements - but no animations applied
+    // document.querySelectorAll('.blog-post, .post-card, .album-collection').forEach(el => {
+    //     // Make content immediately visible with no animations
+    //     el.style.opacity = '1';
+    //     el.style.transform = 'none';
+    //     el.style.transition = 'none';
+    //     observer.observe(el);
+    // });
 
     // Add a simple loading indicator
     window.addEventListener('load', function() {

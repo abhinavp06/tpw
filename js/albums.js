@@ -6,7 +6,7 @@ class AlbumLoader {
     this.allAlbumsLoaded = false;
     this.globalSequence = [];
     this.filteredSequence = [];
-    this.sortDirection = 'asc';
+    this.sortDirection = 'desc'; // Changed to descending by default
     this.searchTerm = '';
     
     this.init();
@@ -147,6 +147,11 @@ class AlbumLoader {
   async renderAlbumCard(albumInfo, albumPath) {
     const timeline = document.getElementById('albums-timeline');
     
+    if (!timeline) {
+      console.error('Timeline element not found!');
+      return;
+    }
+    
     const albumCard = document.createElement('div');
     albumCard.className = 'album-card';
     albumCard.setAttribute('data-album-path', albumPath);
@@ -163,13 +168,13 @@ class AlbumLoader {
     const coverSrc = coverExists ? `${albumPath}/cover.jpg` : null;
     
     albumCard.innerHTML = `
-      <div class="album-cover">
-        <div class="album-placeholder" ${coverSrc ? `style="background-image: url('${coverSrc}'); background-size: cover; background-position: center;"` : ''}>
-          ${!coverSrc ? `<span>${albumInfo.albumName}</span>` : ''}
+      <div class="album-cover-container">
+        <div class="album-cover">
+          <div class="album-placeholder" ${coverSrc ? `style="background-image: url('${coverSrc}'); background-size: cover; background-position: center;"` : ''}>
+            ${!coverSrc ? `<span>${albumInfo.albumName}</span>` : ''}
+          </div>
+          <div class="sequence-number">${String(albumInfo.globalSequence).padStart(2, '0')}</div>
         </div>
-        <div class="sequence-number">${String(albumInfo.globalSequence).padStart(2, '0')}</div>
-      </div>
-      <div class="album-info">
         <p class="published-date">Published: ${albumInfo.reviewPublishDate}</p>
       </div>
     `;

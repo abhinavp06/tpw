@@ -7,52 +7,63 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navigation">
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="album.html" class="nav-link">Albums</a></li>
-          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-          <li><a href="notes.html" class="nav-link active">Notes</a></li>
-          <li><a href="tyli.html" class="nav-link">TYLI</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="page-wrapper">
+      <nav class="main-nav">
+        <table>
+          <tr>
+            <td class="nav-logo">
+              <a href="index.html">The Philosopher's Window</a>
+            </td>
+            <td class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="album.html" class="nav-link">Albums</a>
+              <a href="blogs.html" class="nav-link">Blogs</a>
+              <a href="notes.html" class="nav-link active">Notes</a>
+              <a href="tyli.html" class="nav-link">TYLI</a>
+            </td>
+          </tr>
+        </table>
+      </nav>
 
-    <main class="main-content">
-
-      <div class="albums-controls">
-        <div class="search-container">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search notes by title..."
-            class="search-input"
-          />
-          <button id="clear-search" class="clear-button" style="display: none">
-            Clear
-          </button>
+      <main class="main-content">
+        <div class="albums-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search notes by title..."
+              class="search-input"
+            />
+            <button
+              id="clear-search"
+              class="clear-button"
+              style="display: none"
+            >
+              Clear
+            </button>
+          </div>
+          <div class="sort-container">
+            <button id="sort-button" class="sort-button" data-direction="desc">
+              sort: newest first ↓
+            </button>
+          </div>
         </div>
-        <div class="sort-container">
-          <button id="sort-button" class="sort-button" data-direction="desc">
-            sort: newest first ↓
-          </button>
+
+        <div class="notes-timeline" id="notes-timeline">
+          <!-- Notes will be dynamically loaded here -->
         </div>
-      </div>
 
-      <div class="notes-timeline" id="notes-timeline">
-        <!-- Notes will be dynamically loaded here -->
-      </div>
+        <div class="loading-indicator" id="loading-indicator">
+          <div class="loading-text">Loading notes...</div>
+        </div>
 
-      <div class="loading-indicator" id="loading-indicator">
-        <div class="loading-text">Loading notes...</div>
-      </div>
+        <div class="error-message" id="error-message" style="display: none">
+          Error loading notes. Please try again later.
+        </div>
+      </main>
+    </div>
+    <!-- end page-wrapper -->
 
-      <div class="error-message" id="error-message" style="display: none">
-        Error loading notes. Please try again later.
-      </div>
-    </main>
     <script src="js/main.js"></script>
     <script src="js/notes.js"></script>
   </body>
