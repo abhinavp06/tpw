@@ -67,7 +67,7 @@ class BlogArticleLoader {
               month: 'long',
               day: 'numeric'
             })}</time>
-            <span class="article-author">by ${this.blogInfo.author}</span>
+            <span class="article-author">by abhinavp06</span>
           </div>
         </div>
       `;

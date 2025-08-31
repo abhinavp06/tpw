@@ -1036,8 +1036,9 @@ button:active,
 }
 
 .profile-photo img {
-  max-width: 150px;
-  height: auto;
+  width: 140px;
+  height: 165px;
+  object-fit: cover;
   border: 2px solid #333333;
   border-radius: 5px;
 }
@@ -1613,7 +1614,9 @@ button:active,
   }
 
   .profile-photo img {
-    max-width: 120px;
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
   }
 
   .album-placeholder {

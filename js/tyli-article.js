@@ -67,7 +67,7 @@ class TYLIArticleLoader {
               month: 'long',
               day: 'numeric'
             })}</time>
-            <span class="article-author">by ${this.tyliInfo.author}</span>
+            <span class="article-author">by abhinavp06</span>
           </div>
         </div>
       `;
