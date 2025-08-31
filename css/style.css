@@ -748,7 +748,6 @@ button:active,
 .article-content ol {
   margin: 8px 0 8px 20px;
   color: #cccccc;
-  font-size: 12px;
 }
 
 .article-content li {
@@ -2849,4 +2848,20 @@ button:active,
 
 .markdown-link:visited {
   color: #00dd00 !important;
+}
+
+/* Ensure all list items in markdown content inherit proper font size */
+.article-content ul li,
+.article-content ol li,
+.review-content ul li,
+.review-content ol li,
+.track-content ul li,
+.track-content ol li,
+.track-review-content ul li,
+.track-review-content ol li,
+.note-body ul li,
+.note-body ol li,
+.blog-preview ul li,
+.blog-preview ol li {
+  font-size: inherit;
 }
