@@ -22,22 +22,35 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for fade-in animation
-    document.querySelectorAll('.blog-post, .post-card, .album-collection').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    // Completely disable animations - make all content immediately visible
+    document.querySelectorAll('.blog-post, .post-card, .album-collection, .blog-card, .note-card').forEach(el => {
+        // Force immediate visibility with no animations whatsoever
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.transition = 'none';
+        el.style.animation = 'none';
+        el.classList.add('visible');
     });
+
+    // Disable the intersection observer entirely
+    // const observer = new IntersectionObserver(function(entries) {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             // No animations - content stays static
+    //             entry.target.style.opacity = '1';
+    //             entry.target.style.transform = 'none';
+    //         }
+    //     });
+    // }, observerOptions);
+
+    // // Observe elements - but no animations applied
+    // document.querySelectorAll('.blog-post, .post-card, .album-collection').forEach(el => {
+    //     // Make content immediately visible with no animations
+    //     el.style.opacity = '1';
+    //     el.style.transform = 'none';
+    //     el.style.transition = 'none';
+    //     observer.observe(el);
+    // });
 
     // Add a simple loading indicator
     window.addEventListener('load', function() {
@@ -82,14 +95,21 @@ function convertMarkdownToHtml(markdown) {
     
     // Convert bold text (but preserve existing HTML tags)
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+    
+    // Convert italic text (both asterisk and underscore)
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    html = html.replace(/_(.*?)_/g, '<em>$1</em>');
     
     // Convert code blocks
     html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
     html = html.replace(/`(.*?)`/g, '<code>$1</code>');
     
-    // Convert links
-    html = html.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
+    // Convert images first (before links)
+    html = html.replace(/!\[([^\]]*)\]\(([^)]*)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto; display: block; margin: 1rem 0;">');
+    
+    // Convert links with neon green highlighting and open in new tab
+    html = html.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2" class="markdown-link" target="_blank" rel="noopener noreferrer">$1</a>');
     
     // Convert line breaks to paragraphs (but preserve existing HTML)
     html = html.split('\n\n').map(paragraph => {

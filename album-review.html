@@ -7,46 +7,54 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navigation">
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">The Philosopher's Window</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="album.html" class="nav-link">Albums</a></li>
-          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="page-wrapper">
+      <nav class="main-nav">
+        <table>
+          <tr>
+            <td class="nav-logo">
+              <a href="index.html">The Philosopher's Window</a>
+            </td>
+            <td class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="album.html" class="nav-link">Albums</a>
+              <a href="blogs.html" class="nav-link">Blogs</a>
+              <a href="notes.html" class="nav-link">Notes</a>
+              <a href="tyli.html" class="nav-link">TYLI</a>
+            </td>
+          </tr>
+        </table>
+      </nav>
 
-    <main class="main-content">
-      <article class="album-review">
-        <header class="album-header">
-          <a href="album.html" class="back-link">← back to albums</a>
-        </header>
+      <main class="main-content">
+        <article class="album-review">
+          <header class="album-header">
+            <a href="album.html" class="back-link">← back to albums</a>
+          </header>
 
-        <div class="album-content">
-          <!-- Album info will be loaded here -->
-          <div class="album-info-section" id="album-info">
-            <div class="loading">Loading album information...</div>
+          <div class="album-content">
+            <!-- Album info will be loaded here -->
+            <div class="album-info-section" id="album-info">
+              <div class="loading">Loading album information...</div>
+            </div>
+
+            <!-- Album pre-review section -->
+            <div class="album-reviews-section" id="album-reviews">
+              <!-- Album pre-review will be loaded here -->
+            </div>
+
+            <!-- Tracklist will be loaded here -->
+            <div class="tracklist-section" id="tracklist">
+              <!-- Tracklist will be populated by JavaScript -->
+            </div>
+
+            <!-- Album main review section -->
+            <div class="album-main-review-section" id="album-main-review">
+              <!-- Album main review will be loaded here -->
+            </div>
           </div>
-
-          <!-- Album pre-review section -->
-          <div class="album-reviews-section" id="album-reviews">
-            <!-- Album pre-review will be loaded here -->
-          </div>
-
-          <!-- Tracklist will be loaded here -->
-          <div class="tracklist-section" id="tracklist">
-            <!-- Tracklist will be populated by JavaScript -->
-          </div>
-
-          <!-- Album main review section -->
-          <div class="album-main-review-section" id="album-main-review">
-            <!-- Album main review will be loaded here -->
-          </div>
-        </div>
-      </article>
-    </main>
+        </article>
+      </main>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/album-review.js"></script>
