@@ -12,6 +12,8 @@ I'm going to name this new "language" TYLI. The goal of this language is to be "
 <br/><br/>
 I was really into math and physics when I was studying for college. Unfortunately, it's been quite some time since I have solved a differential equation or worried about Newton's laws.
 <br/><br/>
-So, here's the deal: I'm going to spend more hours in a day getting back into math and physics. The philosophical findings will be present in my reviews. I will keep updating this file with some concrete findings backed by philosophy. These will serve as the founding statements of this new language. I will then use math and physics and any other branch of science to come up with proofs for the same.
+So, here's the deal: I'm going to spend more hours in a day getting back into math and physics. The philosophical findings will be present in my reviews. I will keep updating this file with some concrete findings backed by philosophy. These will serve as the founding statements of this new language.
+<br/><br/>
+When I feel I am ready to start the "math" for this language, I'll start working on this section to "prove" my philosophical findings.
 <br/><br/>
 Crazy? Sure. Is it possible? Who knows. However, the only thing that matters is to have fun and learn something new.
