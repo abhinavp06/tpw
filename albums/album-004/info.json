@@ -1,0 +1,45 @@
+{
+  "albumName": "Tantrance Volume 1 (Disc 1)",
+  "albumArtist": "Various Artists",
+  "releaseYear": "1995",
+  "reviewPublishDate": "",
+  "tracklist": [
+    {
+      "songName": "Astral Projection - Mahadeva",
+      "sequence": "1"
+    },
+    {
+      "songName": "Transwave - Robostyx",
+      "sequence": "2"
+    },
+    {
+      "songName": "Doof - Let's Turn On",
+      "sequence": "3"
+    },
+    {
+      "songName": "Van Basten - King of the Death Posture",
+      "sequence": "4"
+    },
+    {
+      "songName": "Astral Projection - Powergen",
+      "sequence": "5"
+    },
+    {
+      "songName": "Total Eclipse - Le Lotus Bleu (remix)",
+      "sequence": "6"
+    },
+    {
+      "songName": "Poltergeist - Vicious Circles (Carl Cox remix)",
+      "sequence": "7"
+    },
+    {
+      "songName": "Ninjahead - Pulseman vs Sineman",
+      "sequence": "8"
+    },
+    {
+      "songName": "Laurent Garnier - Planet Sex",
+      "sequence": "9"
+    }
+  ],
+  "globalSequence": "4"
+}

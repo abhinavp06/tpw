@@ -11,6 +11,10 @@
     {
       "path": "albums/album-003",
       "globalSequence": 3
+    },
+    {
+      "path": "albums/album-004",
+      "globalSequence": 4
     }
   ]
 }
