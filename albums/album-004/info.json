@@ -1,44 +1,56 @@
 {
-  "albumName": "Tantrance Volume 1 (Disc 1)",
-  "albumArtist": "Various Artists",
-  "releaseYear": "1995",
+  "albumName": "The \"Yeh-Yeh\" Girl from Paris!",
+  "albumArtist": "Françoise Hardy",
+  "releaseYear": "1965",
   "reviewPublishDate": "",
   "tracklist": [
     {
-      "songName": "Astral Projection - Mahadeva",
+      "songName": "Tous les garçons et les filles",
       "sequence": "1"
     },
     {
-      "songName": "Transwave - Robostyx",
+      "songName": "Ça a raté",
       "sequence": "2"
     },
     {
-      "songName": "Doof - Let's Turn On",
+      "songName": "La fille avec toi",
       "sequence": "3"
     },
     {
-      "songName": "Van Basten - King of the Death Posture",
+      "songName": "Oh Oh Chéri",
       "sequence": "4"
     },
     {
-      "songName": "Astral Projection - Powergen",
+      "songName": "Le temps de l'amour",
       "sequence": "5"
     },
     {
-      "songName": "Total Eclipse - Le Lotus Bleu (remix)",
+      "songName": "Il est tout pour moi",
       "sequence": "6"
     },
     {
-      "songName": "Poltergeist - Vicious Circles (Carl Cox remix)",
+      "songName": "On se plaît",
       "sequence": "7"
     },
     {
-      "songName": "Ninjahead - Pulseman vs Sineman",
+      "songName": "Ton meilleur ami",
       "sequence": "8"
     },
     {
-      "songName": "Laurent Garnier - Planet Sex",
+      "songName": "J'ai jeté mon cœur",
       "sequence": "9"
+    },
+    {
+      "songName": "Il est parti un jour",
+      "sequence": "10"
+    },
+    {
+      "songName": "J'suis d'accord",
+      "sequence": "11"
+    },
+    {
+      "songName": "C'est à l'amour auquel je pense",
+      "sequence": "12"
     }
   ],
   "globalSequence": "4"
