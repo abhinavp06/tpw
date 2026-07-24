@@ -18,9 +18,3 @@ But if this is the case, then who is it who is actually moving? Who is the one a
 <br/><br/>
 _Is this just another trick by the ego?_
 <br/><br/>
-Sounds interesting, right? In this blog, we'll go over what my journey has been so far. My thoughts and some experiences.
-<br/><br/>
-We'll listen to one of my favourite mixtapes of all time (well, a mixtape series) - Disc 1 of Tantrance 1
-<br/><br/>
-I know, I know, it's not rock or metal but trust me. The change of genre has a reason. Read to find out!
-<br/><br/>
